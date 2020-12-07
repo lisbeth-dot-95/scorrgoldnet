@@ -1,0 +1,21 @@
+Package: scorrgoldnet
+Title: A non-sparse,artificial single cell RNA-seq reference data set
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lisa",
+           family = "Steinheuer",
+           role = c("aut", "cre"),
+           email = "lisa-maria.steinheuer@ufz.de",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package includes an artificial single cell RNA-seq data set which does not contain sparsity. By modifying a bulk RNA-seq data set, a reference was generated which contains true zeros. This reference data set can be used as a source to generate artificially, sparse data sets, therefore introducing false zero entries and checking their percentage of sparsity.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    reshape2,
+    ggplot2
+Depends: 
+    R (>= 2.10)
+URL: https://github.com/lisbeth-dot-95/scorrgoldnet
