@@ -2,6 +2,8 @@
 
 export(Plot_distribution)
 export(get_sparsity)
+export(introduce_sparsity)
 import(checkmate)
 import(ggplot2)
 importFrom(reshape2,melt)
+importFrom(stats,runif)

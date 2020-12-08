@@ -1,0 +1,42 @@
+---
+title: "Demo_scorrgoldnet"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo_scorrgoldnet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(scorrgoldnet)
+```
+
+
+You can load the reference data set.
+
+```{r load_data}
+data("sc_gold")
+```
+
+# Check the gold reference data set
+
+```{r analysis_gold_data, fig.width = 7}
+get_sparsity(sc_gold)
+Plot_distribution(sc_gold)
+
+```
+
+# Generate a new, sparse data set from reference
+
+```{r generate_sparse_data, fig.width = 7}
+sparse_data <- introduce_sparsity(0.01)
+get_sparsity(sparse_data)
+Plot_distribution(sparse_data)
+```
