@@ -1,6 +1,6 @@
 #' Plot distribution of expression values
 #'
-#' @param data A data frame used to plot its distribution
+#' @param data A data frame (cells over genes) of log-transformed genes expression values. 
 #'
 #' @return A density plot of expression values
 #' @export
@@ -8,6 +8,7 @@
 #' @importFrom reshape2 melt
 #' @examples
 #' # use gold data
+#' data(sc_gold)
 #' Plot_distribution(data = sc_gold)
 Plot_distribution <- function(data){
   #utils::globalVariables("value")

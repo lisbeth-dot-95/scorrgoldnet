@@ -7,7 +7,7 @@
 Plot_distribution(data)
 }
 \arguments{
-\item{data}{A data frame used to plot its distribution}
+\item{data}{A data frame (cells over genes) of log-transformed genes expression values.}
 }
 \value{
 A density plot of expression values
@@ -17,5 +17,6 @@ Plot distribution of expression values
 }
 \examples{
 # use gold data
+data(sc_gold)
 Plot_distribution(data = sc_gold)
 }
