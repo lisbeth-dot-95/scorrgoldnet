@@ -1,6 +1,7 @@
 #' Plot distribution of expression values
 #'
-#' @param data A data frame (cells over genes) of log-transformed genes expression values. 
+#' @param data A data frame (cells over genes) \cr
+#' of log-transformed genes expression values. 
 #'
 #' @return A density plot of expression values
 #' @export
@@ -11,10 +12,12 @@
 #' data(sc_gold)
 #' Plot_distribution(data = sc_gold)
 Plot_distribution <- function(data){
-  #utils::globalVariables("value")
+  
+  assertDataFrame(x = data)
+  
   input <- melt(data) 
-  ggplot(input, aes(x = input$value)) + 
-  geom_density(size=1.5) +
+  p <- ggplot(input, aes(x = input$value)) + 
+  geom_density(size=1) +
   # coord_cartesian(xlim=c(0,0.2), ylim=c(0,15)) +
   xlab("Log Expression Value") +
   ylab("Density") +
@@ -23,5 +26,6 @@ Plot_distribution <- function(data){
   theme(
     panel.grid = element_blank(),
     complete = TRUE)
+  return(p)
   }
   

@@ -5,12 +5,14 @@
 \alias{sc_gold}
 \title{sc_gold}
 \format{
-A data frame with 800 rows across 4960 columns. Rows correspond to cells and columns to genes. The data set was already filtered for missing entries.
+A data frame with 800 rows across 4960 columns. \cr
+Rows correspond to cells and columns to genes. \cr
+The data set was already filtered for missing entries.
 }
 \usage{
 sc_gold
 }
 \description{
-Am artificial, non-sparse scRNA-seq reference data set
+An artificial, non-sparse scRNA-seq reference data set
 }
 \keyword{datasets}

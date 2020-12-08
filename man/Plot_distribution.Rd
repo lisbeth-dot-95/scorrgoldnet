@@ -7,7 +7,8 @@
 Plot_distribution(data)
 }
 \arguments{
-\item{data}{A data frame (cells over genes) of log-transformed genes expression values.}
+\item{data}{A data frame (cells over genes) \cr
+of log-transformed genes expression values.}
 }
 \value{
 A density plot of expression values

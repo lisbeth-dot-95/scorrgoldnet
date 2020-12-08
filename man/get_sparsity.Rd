@@ -7,7 +7,8 @@
 get_sparsity(data_input)
 }
 \arguments{
-\item{data_input}{data frame, the data from which the percentage of zeros should be calculated}
+\item{data_input}{data frame, \cr
+the data from which the percentage of zeros should be calculated}
 }
 \value{
 num, The calculated percentage of zeros in the data set
