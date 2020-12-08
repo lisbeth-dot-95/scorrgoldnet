@@ -14,10 +14,28 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+
+# Data generation
+
+The initial data generation was taken from the [SCRABBLE](https://github.com/software-github/SCRABBLE_PAPER) package. <br>
+Briefly a bulkd data set is manipulated to generate single-cell like data <br>
+
+![Overview of data generation](/home/steinheu/Desktop/Downsampling_Bulk_figure.png){#id .class width=95% height=95%}
+
+
+It does: <br>
+- contain 4960 genes across 800 cells <br>
+- contain solely true zeros <br>
+- contain internal correlation structure <br>
+
+# The package
+
 ```{r setup}
 library(scorrgoldnet)
 ```
 
+## Loading the reference data
 
 You can load the reference data set.
 
@@ -25,18 +43,40 @@ You can load the reference data set.
 data("sc_gold")
 ```
 
-# Check the gold reference data set
+## Check the gold reference data set
+
+Then we can go a little bit deeper and check how many zeros are actually contained in the reference data set using the **get_sparsity** function. <br>
+```{r sparsity_gold_data}
+
+get_sparsity(sc_gold)
+
+```
+
+It appears that `r get_sparsity(sc_gold)` % are there. <br>
+
+Then you can plot the distribution of log-transformed expression values.
+
 
 ```{r analysis_gold_data, fig.width = 7}
-get_sparsity(sc_gold)
+
 Plot_distribution(sc_gold)
 
 ```
 
-# Generate a new, sparse data set from reference
+## Generate a new, sparse data set from reference
 
-```{r generate_sparse_data, fig.width = 7}
+Cool, now that we have the reference data, we can use it to derive sparse data sets were artificial zeros are introduced. <br>
+This can be done using the **introduce_sparsity** function. To control for the severety of the sparsity, the lambda parameter is used. <br>
+It ranges from 0 to 1. The closer to zero, the more zeros will be introduced into the data set. In this example we use 0.01.
+
+```{r generate_sparse_data}
 sparse_data <- introduce_sparsity(0.01)
-get_sparsity(sparse_data)
+```
+
+Again we can check for the sparsity level now in the new data set. Here, `r get_sparsity(sparse_data)` % are now included in the data set! Great! <br>
+In a final step, the distribution of the new data set can be plotted, again.
+
+```{r plot_sparse_data, , fig.width = 7}
+
 Plot_distribution(sparse_data)
 ```

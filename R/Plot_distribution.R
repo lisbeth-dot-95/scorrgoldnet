@@ -21,7 +21,7 @@ Plot_distribution <- function(data){
   # coord_cartesian(xlim=c(0,0.2), ylim=c(0,15)) +
   xlab("Log Expression Value") +
   ylab("Density") +
-  labs(title="Distribution of Expression value") + 
+  labs(title="Distribution of Expression values") + 
   theme_bw() %+replace%
   theme(
     panel.grid = element_blank(),

@@ -18,28 +18,28 @@ introduce_sparsity <- function(lamdba_index){
   # lamdba_index: controling for sparsity severety
 
   # select the index of cells with 800 cells from 2000 cells
-  index_matrix = t(matrix(1:2000,ncol = 20))
+  index_matrix <- t(matrix(1:2000,ncol = 20))
   
   set.seed(1)
   
-  index_sample = as.vector(t(index_matrix[sample(1:20,8),]))
+  index_sample <- as.vector(t(index_matrix[sample(1:20,8),]))
   
   # define the true data
   
-  data_true = scorrgoldnet::sc_gold[,index_sample]
+  data_true <- scorrgoldnet::sc_gold[,index_sample]
   
   # define the dropout 
-  p = matrix(rep(exp(-lamdba_index*rowMeans(data_true)^2),
+  p <- matrix(rep(exp(-lamdba_index*rowMeans(data_true)^2),
                  dim(data_true)[2]), ncol = dim(data_true)[2])
   
   set.seed(1)
   
-  dropout_s = matrix(runif(length(p)), nrow = dim(p)[1])
+  dropout_s <- matrix(runif(length(p)), nrow = dim(p)[1])
   
-  dropmatrix = dropout_s > p 
+  dropmatrix <- dropout_s > p 
   
   # define the sparse data
-  data_raw = data_true*dropmatrix
+  data_raw <- data_true*dropmatrix
 
   out <- as.data.frame(data_raw)
   
