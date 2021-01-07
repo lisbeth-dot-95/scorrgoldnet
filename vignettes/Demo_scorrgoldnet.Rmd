@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 The initial data generation was taken from the [SCRABBLE](https://github.com/software-github/SCRABBLE_PAPER) package. <br>
 Briefly a bulkd data set is manipulated to generate single-cell like data <br>
 
-![Overview of data generation](/home/steinheu/Desktop/Downsampling_Bulk_figure.png){#id .class width=95% height=95%}
+![Overview of data generation](/home/steinheu/git-steinheu/code/scorrgoldnet/inst/Downsampling_Bulk_figure.png){#id .class width=95% height=95%}
 
 
 It does: <br>
@@ -41,6 +41,7 @@ You can load the reference data set.
 
 ```{r load_data}
 data("sc_gold")
+sc_gold[1:10,1:10]
 ```
 
 ## Check the gold reference data set

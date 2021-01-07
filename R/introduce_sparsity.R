@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom stats runif
 #' @examples 
-#' data(sc_gold)
+#' # data(sc_gold)
 #' sparse_data <- introduce_sparsity(0.1)
 #' 
 introduce_sparsity <- function(lamdba_index){
@@ -26,7 +26,7 @@ introduce_sparsity <- function(lamdba_index){
   
   # define the true data
   
-  data_true <- scorrgoldnet::sc_gold[,index_sample]
+  data_true <- scorrgoldnet::data_noise[,index_sample]
   
   # define the dropout 
   p <- matrix(rep(exp(-lamdba_index*rowMeans(data_true)^2),

@@ -17,7 +17,7 @@ A dataframe of sparsified data
 Generate a sparse data set from a reference
 }
 \examples{
-data(sc_gold)
+# data(sc_gold)
 sparse_data <- introduce_sparsity(0.1)
 
 }
